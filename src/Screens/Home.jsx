@@ -116,19 +116,19 @@ const Home = () => {
           <h3 className="text-2xl">Key Features</h3>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
           {['Competitive Price', 'Growth Strategy', 'Quality Products'].map((title, i) => (
-            <div key={i} className="bg-[#3EABBF] text-white p-6 rounded-lg flex-1 text-center">
-              <h4 className="text-xl font-semibold mb-14">{title}</h4>
-              <p className="text-justify ml-16">
-                Lorem ipsum dolor sit ame,<br />
-                consectetur adipisicing elit.<br />
-                Aliquid at, porro placefffat<br />
-                dolorum nemo nequeccdd.
+            <div key={i} className="bg-[#3EABBF] text-white p-6 rounded-lg shadow-md">
+              <h4 className="text-xl font-semibold text-center mb-4">{title}</h4>
+              <p className="text-justify leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Aliquid at, porro placeat dolorum nemo neque.
+                Lorem ipsum dolor sit amet consectetur.
               </p>
             </div>
           ))}
         </div>
+
       </div>
 
       {/* Section 3 */}
@@ -139,7 +139,7 @@ const Home = () => {
               <span className="text-sm uppercase tracking-widest text-white/90">Services</span>
               <h2 className="text-3xl md:text-4xl font-bold">What do we offer</h2>
               <p className="text-sm leading-relaxed">
-                Welcome to <strong>[Your Company Name]</strong>, where we’re dedicated to providing<br/>
+                Welcome to <strong>[Your Company Name]</strong>, where we’re dedicated to providing<br />
                 exceptional solutions tailored to your needs. Here's a glimpse of what we offer.
               </p>
             </div>
