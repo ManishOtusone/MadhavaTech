@@ -4,9 +4,9 @@ import logo from '../assets/Logo_Final 1.png';
 export const Footer = () => {
   return (
     <footer className="bg-[#f9f9f9] px-6 md:px-20 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
         {/* Left Section */}
-        <div>
+        <div className="col-span-1 md:col-span-1">
           <img src={logo} alt="Company Logo" className="w-24 h-24 mb-4" />
           <p className="text-[#808080] text-sm leading-relaxed text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quas facilis natus

@@ -1,7 +1,7 @@
-import React from 'react'
-import { Navbar } from '../Components/Navbar'
-import heroBg from '../assets/Hero-Section.png'
-import section from "../assets/Section-1.png"
+import React from 'react';
+import { Navbar } from '../Components/Navbar';
+import heroBg from '../assets/Hero-Section.png';
+import section from "../assets/Section-1.png";
 import item1 from '../assets/Ellipse.png';
 import item2 from '../assets/Icon Security.png';
 import item3 from '../assets/Icon Idea.png';
@@ -11,7 +11,7 @@ import Bg from '../assets/Hero-Section.png';
 import dart from "../assets/Archery.png";
 import bulb from "../assets/bulb.png";
 import valueImg from "../assets/value.png";
-import { Footer } from '../Components/Footer'
+import { Footer } from '../Components/Footer';
 
 const Home = () => {
   const cardsData = [
@@ -42,10 +42,10 @@ const Home = () => {
   ];
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
 
-      {/* {Hero Section} */}
+      {/* Hero Section */}
       <div
         className="h-[603.36px] w-full text-white flex flex-col items-start justify-center px-10 text-left bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
@@ -62,15 +62,12 @@ const Home = () => {
         </button>
       </div>
 
-      {/* {Section--1} */}
-
+      {/* Section 1 */}
       <div className="py-10 px-4 bg-white">
-        {/* Heading */}
         <div className="text-center mb-8">
           <span className="text-cyan-800 text-3xl font-bold">How We Work</span>
         </div>
 
-        {/* Company Cards */}
         <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-6 px-8 py-6">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="text-center">
@@ -81,9 +78,8 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6 md:px-20">
 
-          {/* Left Content */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6 md:px-20">
           <div>
             <h2 className="text-2xl font-semibold text-cyan-900 mb-4 leading-relaxed">
               Where Strategy Meets <br /> Imagination
@@ -108,73 +104,42 @@ const Home = () => {
             </button>
           </div>
 
-          {/* Right Image */}
           <div>
             <img src={section} alt="Section Illustration" className="w-full h-auto rounded" />
-            {/* <div className=''>
-
-                    </div> */}
           </div>
         </div>
-
       </div>
 
-      {/* Section--2 */}
-
+      {/* Section 2 */}
       <div className="bg-[#F4F4F4] py-10 px-4">
-        {/* Section Title */}
         <div className="text-center text-[#265982] font-bold mb-8">
           <h3 className="text-2xl">Key Features</h3>
         </div>
 
-
         <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 max-w-6xl mx-auto">
-
-          <div className="bg-[#3EABBF] text-white p-6 rounded-lg flex-1 text-center">
-            <h4 className="text-xl font-semibold mb-14">Competitive Price</h4>
-            <p className='text-justify ml-16'>
-              Lorem ipsum dolor sit amet,<br />
-              consectetur adipisicing elidt.<br />
-              Aliquid at, wwporro placeat<br />
-              dolorum nemo neque.dded
-            </p>
-          </div>
-
-
-          <div className="bg-[#3EABBF] text-white p-6 rounded-lg flex-1 text-center">
-            <h4 className="text-xl font-semibold mb-14">Growth Strategy</h4>
-            <p className='text-justify ml-16'>
-              Lorem ipsum dolor sit amet,<br />
-              consectetur adipisicing elit.<br />
-              Aliquid at, porro placeacvvt<br />
-              dolorum nemo neque.ccvve
-            </p>
-          </div>
-
-
-          <div className="bg-[#3EABBF] text-white p-6 rounded-lg flex-1 text-center">
-            <h4 className="text-xl font-semibold mb-14">Quality Products</h4>
-            <p className='text-justify ml-16'>
-              Lorem ipsum dolor sit amet,<br />
-              consectetur adipisicing velit.<br />
-              Aliquid at, porro placeatccvr<br />
-              dolorum nemo neque.dyeby
-            </p>
-          </div>
+          {['Competitive Price', 'Growth Strategy', 'Quality Products'].map((title, i) => (
+            <div key={i} className="bg-[#3EABBF] text-white p-6 rounded-lg flex-1 text-center">
+              <h4 className="text-xl font-semibold mb-14">{title}</h4>
+              <p className="text-justify ml-16">
+                Lorem ipsum dolor sit amet,<br />
+                consectetur adipisicing elit.<br />
+                Aliquid at, porro placeat<br />
+                dolorum nemo neque.
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Section--3 */}
-
-      <div className="bg-white px-6 pt-10 pb-45 relative z-0">
-        <div className="bg-[#3EABBF] pt-8 pb-32 px-6 rounded-md relative h-[400px] z-0">
+      {/* Section 3 */}
+      <div className="bg-white px-6 pt-10 pb-10 relative z-0">
+        <div className="bg-[#3EABBF] pt-8 pb-48 px-6 rounded-md relative min-h-[400px] z-0">
           <div className="text-white max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start">
             <div className="space-y-4 max-w-3xl">
               <span className="text-sm uppercase tracking-widest text-white/90">Services</span>
               <h2 className="text-3xl md:text-4xl font-bold">What do we offer</h2>
               <p className="text-sm leading-relaxed">
                 Welcome to <strong>[Your Company Name]</strong>, where we’re dedicated to providing
-                <br className="hidden sm:block" />
                 exceptional solutions tailored to your needs. Here's a glimpse of what we offer.
               </p>
             </div>
@@ -186,23 +151,18 @@ const Home = () => {
           </div>
         </div>
 
-
         {/* Cards Section */}
-        <div className="w-full px-4 sm:px-6 md:px-8 mt-[-200px] relative z-10">
+        <div className="w-full px-4 sm:px-6 md:px-8 mt-0 md:-mt-48 relative z-10">
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {cardsData.map((card, index) => (
               <div key={index} className="w-full flex justify-center">
-                <Cards
-                  icon={card.icon}
-                  title={card.title}
-                  description={card.description}
-                />
+                <Cards {...card} />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Testimonials Section */}
+        {/* Testimonials */}
         <div
           className="mt-20 h-auto w-full text-white bg-cover bg-center flex flex-col items-center justify-center px-6 py-10"
           style={{ backgroundImage: `url(${Bg})` }}
@@ -210,95 +170,54 @@ const Home = () => {
           <h1 className="text-4xl font-bold mb-8">Testimonials</h1>
 
           <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl">
-            <div className="rounded-lg p-4 text-black w-full md:w-1/2">
-              <div className="rounded-full bg-[#C4C4C4] w-16 h-16 mb-4 "></div>
-              <p className="text-sm leading-relaxed text-white">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa animi...
-              </p>
-            </div>
-
-            <div className="rounded-lg p-4 text-black w-full md:w-1/2">
-              <div className="rounded-full bg-[#C4C4C4] w-16 h-16 mb-4 "></div>
-              <p className="text-sm leading-relaxed text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam...
-              </p>
-            </div>
+            {[1, 2].map((_, i) => (
+              <div key={i} className="rounded-lg p-4 text-black w-full md:w-1/2">
+                <div className="rounded-full bg-[#C4C4C4] w-16 h-16 mb-4"></div>
+                <p className="text-sm leading-relaxed text-white">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum atque...
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
-
-        {/* Values */}
-
-        <div className="mt-[100px] px-4  md:px-20 text-center">
+        {/* Values Section */}
+        <div className="mt-[100px] px-4 md:px-20 text-center">
           <h1 className="text-3xl font-bold text-black mb-6">Welcome To Madhava</h1>
 
           <p className="text-[#808080] text-[16px] md:text-base leading-relaxed mb-12 text-justify">
             We at OTUSONE understand the state-of-the-business-art technologies that define the future and can
             serve as an efficient services transformation catalyst for the clients! OTUSONE is a groundbreaking
             firm in the realm of software development with our dedicated deliverance of iOS and Android mobile
-            application development, website development, and digital marketing-related solutions. We are focused
-            on helping you conceive, design, program, and execute your applications along with testing, and bug
-            fixing involved in creating and maintaining software components. Scale and upgrade your applications
-            with OTUSONE!
+            application development, website development, and digital marketing-related solutions.
           </p>
 
-          {/* Cards Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
-              <div className="flex justify-center mb-4">
-                <img src={dart} alt="Mission" className="w-70 h-70 object-contain" />
+            {[{ img: dart, title: "Our Mission" }, { img: bulb, title: "Our Vision" }, { img: valueImg, title: "Our Values" }].map((card, i) => (
+              <div key={i} className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
+                <div className="flex justify-center mb-4">
+                  <img src={card.img} alt={card.title} className="w-70 h-70 object-contain" />
+                </div>
+                <h2 className="text-xl font-semibold mb-2 text-center">{card.title}</h2>
+                <p className="text-gray-600 text-sm leading-relaxed text-justify">
+                  The main purpose of any website or mobile App is to attract new visitors. We provide creative
+                  solutions that help generate business from your product.
+                </p>
               </div>
-              <h2 className="text-xl font-semibold mb-2 text-center">Our Mission</h2>
-              <p className="text-gray-600 text-sm leading-relaxed text-justify ">
-                The main purpose of any website or mobile App is to attract new visitors, and therefore choosing
-                the right design is the key to success. We provide creative solutions for building websites and
-                Apps which would help you generate business from your product.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
-              <div className="flex justify-center mb-4">
-                <img src={bulb} alt="Vision" className="w-70 h-70 object-contain" />
-              </div>
-              <h2 className="text-xl font-semibold mb-2 text-center">Our Vision</h2>
-              <p className="text-gray-600 text-sm leading-relaxed text-justify">
-                The main purpose of any website or mobile App is to attract new visitors, and therefore choosing
-                the right design is the key to success. We provide creative solutions for building websites and
-                Apps which would help you generate business from your product.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
-              <div className="flex justify-center mb-4">
-                <img src={valueImg} alt="Values" className="w-70 h-70 object-contain" />
-              </div>
-              <h2 className="text-xl font-semibold mb-2 text-center">Our Values</h2>
-              <p className="text-gray-600 text-sm leading-relaxed text-justify">
-                The main purpose of any website or mobile App is to attract new visitors, and therefore choosing
-                the right design is the key to success. We provide creative solutions for building websites and
-                Apps which would help you generate business from your product.
-              </p>
-            </div>
+            ))}
           </div>
 
-
           <div className="bg-[#265982] rounded-lg flex flex-col md:flex-row justify-between items-center p-6 md:p-10 gap-6 text-white m-[50px]">
-            {/* Left White Box */}
             <div className="bg-white w-full md:w-1/4 h-24 rounded-lg"></div>
 
-            {/* Center Text */}
             <div className="text-center md:text-left flex-1">
-              <p className="font-semibold text-lg ">
+              <p className="font-semibold text-lg">
                 Lorem ipsum is simply <br />
                 dummy text of the printing <br />
                 and typesetting industry.
               </p>
             </div>
 
-            {/* Right Button */}
             <div>
               <button className="bg-[#51AEC5] text-white px-6 py-2 rounded-md font-medium hover:bg-[#4298af] transition-all">
                 Get in touch
@@ -306,8 +225,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
+
+      <Footer />
     </div>
   );
 };
