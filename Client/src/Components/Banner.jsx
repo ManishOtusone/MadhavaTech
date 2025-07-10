@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Banner = ({ image, heading, para }) => {
+const Banner = ({ image, heading, para }) => {
     return (
         <div
             className="w-full h-[250px] md:h-[325px] relative bg-cover bg-center bg-no-repeat"
@@ -37,3 +37,5 @@ export const Banner = ({ image, heading, para }) => {
         </div>
     );
 };
+
+export default Banner

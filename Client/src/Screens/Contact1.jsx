@@ -6,7 +6,7 @@ import picture1 from "../assets/Photo-1.jpg";
 import phone from "../assets/phone.png";
 import message from "../assets/message.png";
 import location from "../assets/location.png";
-import { Banner } from '../Components/Banner';
+import Banner  from '../Components/Banner';
 
 export const Contact1 = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +16,7 @@ export const Contact1 = () => {
     subject: "",
     message: ""
   });
-
+  
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({

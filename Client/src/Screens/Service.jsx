@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from "../Components/Navbar";
-import { Banner } from "../Components/Banner";
+import Banner from "../Components/Banner";
 import { CardSlider } from '../Components/CardSlider';
 import picture from "../assets/ServicePhoto.png";
 import imageBox from "../assets/Image-Box.png";

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from "../Components/Navbar";
-import { Banner } from "../Components/Banner";
+import Banner  from "../Components/Banner";
 import { Footer } from "../Components/Footer";
 import AboutPic from "../assets/About.png";
 import dart from "../assets/Archery.png";

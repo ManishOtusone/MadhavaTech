@@ -59,9 +59,7 @@ export const CardSlider = ({ image }) => {
                                     }
                                 </h3>
 
-                                <p className="text-gray-700 text-sm">
-                                    {card.description}
-                                </p>
+
                             </div>
 
                             <button className=" bg-[#F57E24] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#e26b12] transition transform hover:scale-105">
