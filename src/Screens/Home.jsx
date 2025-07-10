@@ -121,10 +121,10 @@ const Home = () => {
             <div key={i} className="bg-[#3EABBF] text-white p-6 rounded-lg flex-1 text-center">
               <h4 className="text-xl font-semibold mb-14">{title}</h4>
               <p className="text-justify ml-16">
-                Lorem ipsum dolor sit amet,<br />
+                Lorem ipsum dolor sit ame,<br />
                 consectetur adipisicing elit.<br />
-                Aliquid at, porro placeat<br />
-                dolorum nemo neque.
+                Aliquid at, porro placefffat<br />
+                dolorum nemo nequeccdd.
               </p>
             </div>
           ))}
@@ -139,7 +139,7 @@ const Home = () => {
               <span className="text-sm uppercase tracking-widest text-white/90">Services</span>
               <h2 className="text-3xl md:text-4xl font-bold">What do we offer</h2>
               <p className="text-sm leading-relaxed">
-                Welcome to <strong>[Your Company Name]</strong>, where we’re dedicated to providing
+                Welcome to <strong>[Your Company Name]</strong>, where we’re dedicated to providing<br/>
                 exceptional solutions tailored to your needs. Here's a glimpse of what we offer.
               </p>
             </div>

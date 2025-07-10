@@ -9,7 +9,7 @@ export const ServiceCards = ({ img, heading, para }) => {
                 className="rounded-md w-full h-48 object-cover mb-4"
             />
 
-            <h3 className="text-lg sm:text-xl font-semibold text-center text-gray-800 mb-2">
+            <h3 className="text-lg sm:text-xl font-bold  text-gray-800 mb-2 text-center">
                 {heading}
             </h3>
 

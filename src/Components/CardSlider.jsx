@@ -7,22 +7,22 @@ export const CardSlider = ({ image }) => {
         {
             image,
             title: 'App Development',
-            description: 'We create amazing mobile and web applications tailored to your needs.'
+
         },
         {
             image,
             title: 'Web Development',
-            description: 'Professional and responsive websites that grow your business.'
+
         },
         {
             image,
             title: 'UI/UX Design',
-            description: 'User-friendly and beautiful designs for the best experience.'
+
         },
         {
             image,
             title: 'Digital Marketing',
-            description: 'Effective marketing strategies to boost your online presence.'
+
         },
     ];
 
@@ -47,7 +47,7 @@ export const CardSlider = ({ image }) => {
                                     className="w-full h-52 object-cover rounded-[14px] mb-4 flex-shrink-0"
                                 />
 
-                                <h3 className="text-left text-2xl leading-snug font-bold mb-2">
+                                <h3 className="text-left text-2xl leading-snug font-bold ">
                                     {titleParts.length > 1
                                         ? (
                                             <>
@@ -64,7 +64,7 @@ export const CardSlider = ({ image }) => {
                                 </p>
                             </div>
 
-                            <button className="mt-5 bg-[#F57E24] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#e26b12] transition transform hover:scale-105">
+                            <button className=" bg-[#F57E24] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#e26b12] transition transform hover:scale-105">
                                 See More
                             </button>
                         </div>

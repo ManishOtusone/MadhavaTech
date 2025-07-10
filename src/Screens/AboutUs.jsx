@@ -55,17 +55,17 @@ export const AboutUs = () => {
                     {
                         title: "Our Mission",
                         img: dart,
-                        desc: "The main purpose of any website or mobile app is to attract new visitors. Choosing the right design is the key to success."
+                        desc: "The main purpose of any website or mobile App is to attract new visitors, and therefore choosing the right design is the key to success of any App or Website. We provide creative solutions for building websites and Apps which would help you to generate business from your product."
                     },
                     {
                         title: "Our Vision",
                         img: bulb,
-                        desc: "We focus on writing well-documented code that’s easy to understand and maintain. Our goal is to ensure long-term performance."
+                        desc: "We focus on writing a well documented code which is easy to understand and maintain in future for the better performance of the Web or Mobile Application. We are focused on innovation and creativity to lead the change."
                     },
                     {
                         title: "Our Values",
                         img: value,
-                        desc: "Innovation: We embrace creativity and constantly seek new ways to solve challenges. Integrity: We uphold the highest standards."
+                        desc: "Innovation: We embrace creativity and continually seek new ways to solve challenges and drive progress. Integrity: We uphold the highest ethical standards, fostering trust and transparency in all our interactions."
                     }
                 ].map((item, idx) => (
                     <div key={idx} className="bg-white rounded-lg p-4 shadow-md text-center">
@@ -178,7 +178,7 @@ export const AboutUs = () => {
                                 <FontAwesomeIcon icon={faStar} key={i} />
                             ))}
                         </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">
+                        <p className="text-gray-700 text-sm leading-relaxed text-justify">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -186,6 +186,10 @@ export const AboutUs = () => {
                             Excepteur sint occaecat cupidatat non proident.
                             <br /><br />
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </p>
