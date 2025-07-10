@@ -2,9 +2,10 @@ import React from 'react';
 
 export const Banner = ({ image, heading, para }) => {
     return (
-        <div className="w-full h-[300px] md:h-[325px] relative bg-cover bg-center"
-            style={{ backgroundImage: `url(${image})` }}>
-
+        <div
+            className="w-full h-[250px] md:h-[325px] relative bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${image})` }}
+        >
             {/* Gradient Overlay */}
             <div
                 className="absolute inset-0"
@@ -15,9 +16,9 @@ export const Banner = ({ image, heading, para }) => {
             ></div>
 
             {/* Content Area */}
-            <div className="relative max-w-4xl w-full z-10 px-6 py-16 md:py-24 ml-30 mt-10">
+            <div className="relative max-w-4xl w-full z-10 px-4 md:px-6 py-10 md:py-24">
                 <div
-                    className="flex flex-col items-start gap-3 text-left p-6 rounded-md"
+                    className="flex flex-col items-start gap-3 text-left p-3 rounded-md mt-20 ml-10  "
                     style={{
                         background:
                             "linear-gradient(90deg, #165A8A 0%, rgba(22, 90, 138, 0.49) 47%, rgba(22, 90, 138, 0) 100%)",
@@ -30,7 +31,7 @@ export const Banner = ({ image, heading, para }) => {
                     </div>
 
                     {/* Big Subtitle */}
-                    <p className="text-2xl md:text-4xl font-bold text-white">{para}</p>
+                    <p className="text-xl md:text-4xl font-bold text-white">{para}</p>
                 </div>
             </div>
         </div>

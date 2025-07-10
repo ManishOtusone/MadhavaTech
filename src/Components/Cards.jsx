@@ -2,7 +2,7 @@ import React from 'react';
 
 const Cards = ({ icon, title, description }) => {
     return (
-        <div className="bg-white pt-3 rounded-lg shadow-md w-full max-w-sm space-y-4">
+        <div className="bg-white pt-4 rounded-lg shadow-md w-full max-w-sm mx-auto space-y-4 hover:shadow-lg transition duration-300 ease-in-out">
             {/* Icon */}
             <div className="flex justify-center">
                 <div className="bg-gray-300 rounded-full w-24 h-24 flex items-center justify-center overflow-hidden">
@@ -11,8 +11,8 @@ const Cards = ({ icon, title, description }) => {
             </div>
 
             {/* Title */}
-            <div className="text-center mt-4">
-                <h4 className="text-[#3EABBF] font-medium text-lg leading-tight">
+            <div className="text-center px-4">
+                <h4 className="text-[#3EABBF] font-semibold text-lg leading-tight">
                     {title.split(' ').map((word, index) => (
                         <React.Fragment key={index}>
                             {word}
@@ -23,7 +23,7 @@ const Cards = ({ icon, title, description }) => {
             </div>
 
             {/* Description */}
-            <p className="font-roboto font-normal text-sm leading-relaxed text-justify text-gray-700 px-6 pb-6">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify px-6 pb-6">
                 {description}
             </p>
         </div>

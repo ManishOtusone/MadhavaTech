@@ -8,7 +8,7 @@ export const Footer = () => {
         {/* Left Section */}
         <div>
           <img src={logo} alt="Company Logo" className="w-24 h-24 mb-4" />
-          <p className="text-[#808080] text-sm leading-relaxed">
+          <p className="text-[#808080] text-sm leading-relaxed text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quas facilis natus
             doloremque obcaecati dolores necessitatibus aperiam dolbus veritatis quam iure
             deleniti. Aliquid quisquam quasi.

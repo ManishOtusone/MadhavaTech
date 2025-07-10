@@ -93,7 +93,7 @@ const Home = () => {
               Empowering Digital Innovation – With <strong>Madhava</strong>
             </p>
 
-            <p className="text-gray-700 mb-4">
+            <p className="text-gray-700 mb-4 text-justify">
               At Madhava, we understand the cutting-edge technologies that are shaping the future of business. As a pioneering force in software development, Madhava delivers end-to-end services in:
             </p>
 
@@ -132,33 +132,33 @@ const Home = () => {
 
           <div className="bg-[#3EABBF] text-white p-6 rounded-lg flex-1 text-center">
             <h4 className="text-xl font-semibold mb-14">Competitive Price</h4>
-            <p>
+            <p className='text-justify ml-16'>
               Lorem ipsum dolor sit amet,<br />
-              consectetur adipisicing elit.<br />
-              Aliquid at, porro placeat<br />
-              dolorum nemo neque.
+              consectetur adipisicing elidt.<br />
+              Aliquid at, wwporro placeat<br />
+              dolorum nemo neque.dded
             </p>
           </div>
 
 
           <div className="bg-[#3EABBF] text-white p-6 rounded-lg flex-1 text-center">
             <h4 className="text-xl font-semibold mb-14">Growth Strategy</h4>
-            <p>
+            <p className='text-justify ml-16'>
               Lorem ipsum dolor sit amet,<br />
               consectetur adipisicing elit.<br />
-              Aliquid at, porro placeat<br />
-              dolorum nemo neque.
+              Aliquid at, porro placeacvvt<br />
+              dolorum nemo neque.ccvve
             </p>
           </div>
 
 
           <div className="bg-[#3EABBF] text-white p-6 rounded-lg flex-1 text-center">
             <h4 className="text-xl font-semibold mb-14">Quality Products</h4>
-            <p>
+            <p className='text-justify ml-16'>
               Lorem ipsum dolor sit amet,<br />
-              consectetur adipisicing elit.<br />
-              Aliquid at, porro placeat<br />
-              dolorum nemo neque.
+              consectetur adipisicing velit.<br />
+              Aliquid at, porro placeatccvr<br />
+              dolorum nemo neque.dyeby
             </p>
           </div>
         </div>
@@ -186,133 +186,130 @@ const Home = () => {
           </div>
         </div>
 
+
         {/* Cards Section */}
-        <div className="absolute top-[253px] left-1/2 -translate-x-1/2 z-10 w-full px-8">
-          <div className="max-w-7xl mx-auto flex justify-between gap-6">
+        <div className="w-full px-4 sm:px-6 md:px-8 mt-[-200px] relative z-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {cardsData.map((card, index) => (
-              <Cards
-                key={index}
-                icon={card.icon}
-                title={card.title}
-                description={card.description}
-              />
+              <div key={index} className="w-full flex justify-center">
+                <Cards
+                  icon={card.icon}
+                  title={card.title}
+                  description={card.description}
+                />
+              </div>
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Testimonial */}
+        {/* Testimonials Section */}
+        <div
+          className="mt-20 h-auto w-full text-white bg-cover bg-center flex flex-col items-center justify-center px-6 py-10"
+          style={{ backgroundImage: `url(${Bg})` }}
+        >
+          <h1 className="text-4xl font-bold mb-8">Testimonials</h1>
 
-      <div
-        className=" h-[603.36px] w-full text-white bg-cover bg-center flex flex-col items-center justify-center mt-10 px-6 py-10"
-        style={{ backgroundImage: `url(${Bg})` }}
-      >
-        <h1 className="text-4xl font-bold mb-8">Testimonials</h1>
-
-        <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl">
-          <div className=" rounded-lg p-4 text-black w-full md:w-1/2 ">
-            <div className="rounded-full bg-[#C4C4C4] w-16 h-16 mb-4 "></div>
-            <p className="text-sm leading-relaxed text-white">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa
-              animi, saepe ab velit fugiat odit? Totam non, deserunt expedita
-              accusamus quae ducimus perferendis possimus earum ratione.
-            </p>
-          </div>
-
-          <div className=" rounded-lg p-4 text-black w-full md:w-1/2 ">
-            <div className="rounded-full bg-[#C4C4C4] w-16 h-16 mb-4 "></div>
-            <p className="text-sm leading-relaxed text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              iure distinctio sequi eveniet eos dignissimos, hic vel nesciunt
-              ipsa aliquid deleniti, modi magnam doloremque.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Values */}
-
-      <div className="mt-[100px] px-4  md:px-20 text-center">
-        <h1 className="text-3xl font-bold text-black mb-6">Welcome To Madhava</h1>
-
-        <p className="text-[#808080] text-[16px] md:text-base leading-relaxed mb-12">
-          We at OTUSONE understand the state-of-the-business-art technologies that define the future and can
-          serve as an efficient services transformation catalyst for the clients! OTUSONE is a groundbreaking
-          firm in the realm of software development with our dedicated deliverance of iOS and Android mobile
-          application development, website development, and digital marketing-related solutions. We are focused
-          on helping you conceive, design, program, and execute your applications along with testing, and bug
-          fixing involved in creating and maintaining software components. Scale and upgrade your applications
-          with OTUSONE!
-        </p>
-
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
-            <div className="flex justify-center mb-4">
-              <img src={dart} alt="Mission" className="w-70 h-70 object-contain" />
+          <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl">
+            <div className="rounded-lg p-4 text-black w-full md:w-1/2">
+              <div className="rounded-full bg-[#C4C4C4] w-16 h-16 mb-4 "></div>
+              <p className="text-sm leading-relaxed text-white">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa animi...
+              </p>
             </div>
-            <h2 className="text-xl font-semibold mb-2 text-center">Our Mission</h2>
-            <p className="text-gray-600 text-sm leading-relaxed text-center">
-              The main purpose of any website or mobile App is to attract new visitors, and therefore choosing
-              the right design is the key to success. We provide creative solutions for building websites and
-              Apps which would help you generate business from your product.
-            </p>
-          </div>
 
-          {/* Card 2 */}
-          <div className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
-            <div className="flex justify-center mb-4">
-              <img src={bulb} alt="Vision" className="w-70 h-70 object-contain" />
+            <div className="rounded-lg p-4 text-black w-full md:w-1/2">
+              <div className="rounded-full bg-[#C4C4C4] w-16 h-16 mb-4 "></div>
+              <p className="text-sm leading-relaxed text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam...
+              </p>
             </div>
-            <h2 className="text-xl font-semibold mb-2 text-center">Our Vision</h2>
-            <p className="text-gray-600 text-sm leading-relaxed text-center">
-              The main purpose of any website or mobile App is to attract new visitors, and therefore choosing
-              the right design is the key to success. We provide creative solutions for building websites and
-              Apps which would help you generate business from your product.
-            </p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
-            <div className="flex justify-center mb-4">
-              <img src={valueImg} alt="Values" className="w-70 h-70 object-contain" />
-            </div>
-            <h2 className="text-xl font-semibold mb-2 text-center">Our Values</h2>
-            <p className="text-gray-600 text-sm leading-relaxed text-center">
-              The main purpose of any website or mobile App is to attract new visitors, and therefore choosing
-              the right design is the key to success. We provide creative solutions for building websites and
-              Apps which would help you generate business from your product.
-            </p>
           </div>
         </div>
 
 
-        <div className="bg-[#265982] rounded-lg flex flex-col md:flex-row justify-between items-center p-6 md:p-10 gap-6 text-white m-[50px]">
-          {/* Left White Box */}
-          <div className="bg-white w-full md:w-1/4 h-24 rounded-lg"></div>
+        {/* Values */}
 
-          {/* Center Text */}
-          <div className="text-center md:text-left flex-1">
-            <p className="font-semibold text-lg">
-              Lorem ipsum is simply <br />
-              dummy text of the printing <br />
-              and typesetting industry.
-            </p>
+        <div className="mt-[100px] px-4  md:px-20 text-center">
+          <h1 className="text-3xl font-bold text-black mb-6">Welcome To Madhava</h1>
+
+          <p className="text-[#808080] text-[16px] md:text-base leading-relaxed mb-12 text-justify">
+            We at OTUSONE understand the state-of-the-business-art technologies that define the future and can
+            serve as an efficient services transformation catalyst for the clients! OTUSONE is a groundbreaking
+            firm in the realm of software development with our dedicated deliverance of iOS and Android mobile
+            application development, website development, and digital marketing-related solutions. We are focused
+            on helping you conceive, design, program, and execute your applications along with testing, and bug
+            fixing involved in creating and maintaining software components. Scale and upgrade your applications
+            with OTUSONE!
+          </p>
+
+          {/* Cards Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
+              <div className="flex justify-center mb-4">
+                <img src={dart} alt="Mission" className="w-70 h-70 object-contain" />
+              </div>
+              <h2 className="text-xl font-semibold mb-2 text-center">Our Mission</h2>
+              <p className="text-gray-600 text-sm leading-relaxed text-justify ">
+                The main purpose of any website or mobile App is to attract new visitors, and therefore choosing
+                the right design is the key to success. We provide creative solutions for building websites and
+                Apps which would help you generate business from your product.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
+              <div className="flex justify-center mb-4">
+                <img src={bulb} alt="Vision" className="w-70 h-70 object-contain" />
+              </div>
+              <h2 className="text-xl font-semibold mb-2 text-center">Our Vision</h2>
+              <p className="text-gray-600 text-sm leading-relaxed text-justify">
+                The main purpose of any website or mobile App is to attract new visitors, and therefore choosing
+                the right design is the key to success. We provide creative solutions for building websites and
+                Apps which would help you generate business from your product.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white shadow-md rounded-lg p-6 text-left hover:shadow-lg transition">
+              <div className="flex justify-center mb-4">
+                <img src={valueImg} alt="Values" className="w-70 h-70 object-contain" />
+              </div>
+              <h2 className="text-xl font-semibold mb-2 text-center">Our Values</h2>
+              <p className="text-gray-600 text-sm leading-relaxed text-justify">
+                The main purpose of any website or mobile App is to attract new visitors, and therefore choosing
+                the right design is the key to success. We provide creative solutions for building websites and
+                Apps which would help you generate business from your product.
+              </p>
+            </div>
           </div>
 
-          {/* Right Button */}
-          <div>
-            <button className="bg-[#51AEC5] text-white px-6 py-2 rounded-md font-medium hover:bg-[#4298af] transition-all">
-              Get in touch
-            </button>
+
+          <div className="bg-[#265982] rounded-lg flex flex-col md:flex-row justify-between items-center p-6 md:p-10 gap-6 text-white m-[50px]">
+            {/* Left White Box */}
+            <div className="bg-white w-full md:w-1/4 h-24 rounded-lg"></div>
+
+            {/* Center Text */}
+            <div className="text-center md:text-left flex-1">
+              <p className="font-semibold text-lg ">
+                Lorem ipsum is simply <br />
+                dummy text of the printing <br />
+                and typesetting industry.
+              </p>
+            </div>
+
+            {/* Right Button */}
+            <div>
+              <button className="bg-[#51AEC5] text-white px-6 py-2 rounded-md font-medium hover:bg-[#4298af] transition-all">
+                Get in touch
+              </button>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

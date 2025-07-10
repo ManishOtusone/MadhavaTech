@@ -9,11 +9,11 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-white shadow-md px-4 z-50">
-      <div className="flex items-center justify-between py-2">
+    <div className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between py-2 px-4 sm:px-6">
 
         {/* Logo */}
-        <div className="ml-2 sm:ml-6">
+        <div className="flex-shrink-0">
           <img
             src={logo}
             alt="Logo"
@@ -21,9 +21,9 @@ export const Navbar = () => {
           />
         </div>
 
-        {/* Hamburger */}
-        <div className="sm:hidden pr-2">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
+        {/* Hamburger (Mobile Only) */}
+        <div className="sm:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
             <FontAwesomeIcon
               icon={menuOpen ? faXmark : faBars}
               className="text-2xl text-gray-700"
@@ -32,7 +32,7 @@ export const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden sm:flex items-center gap-4 sm:gap-6 font-medium text-gray-700">
+        <div className="hidden sm:flex items-center gap-6 font-medium text-gray-700">
           <Link to="/" className="hover:text-blue-600">Home</Link>
           <Link to="/service" className="hover:text-blue-600">Service</Link>
           <Link to="/aboutUs" className="hover:text-blue-600">About Us</Link>
@@ -54,20 +54,22 @@ export const Navbar = () => {
 
       {/* Mobile Nav */}
       {menuOpen && (
-        <div className="sm:hidden flex flex-col items-center gap-4 pb-4 font-medium text-gray-700">
-          <Link to="/" className="hover:text-blue-600" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/service" className="hover:text-blue-600" onClick={() => setMenuOpen(false)}>Service</Link>
-          <Link to="/aboutUs" className="hover:text-blue-600" onClick={() => setMenuOpen(false)}>About Us</Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            <button className="bg-cyan-600 text-white text-sm font-semibold px-4 py-2 rounded hover:bg-cyan-800">
-              Contact Us
-            </button>
-          </Link>
-          <div className="flex gap-4">
-            <FontAwesomeIcon icon={faFacebook} className="text-gray-600 text-xl hover:text-blue-800 cursor-pointer" />
-            <FontAwesomeIcon icon={faInstagram} className="text-gray-600 text-xl hover:text-pink-600 cursor-pointer" />
-            <FontAwesomeIcon icon={faLinkedin} className="text-gray-600 text-xl hover:text-blue-700 cursor-pointer" />
-            <FontAwesomeIcon icon={faXTwitter} className="text-gray-600 text-xl hover:text-gray-800 cursor-pointer" />
+        <div className="sm:hidden px-6 pb-4 font-medium text-gray-700 overflow-hidden">
+          <div className="flex flex-col items-center gap-4">
+            <Link to="/" className="hover:text-blue-600" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link to="/service" className="hover:text-blue-600" onClick={() => setMenuOpen(false)}>Service</Link>
+            <Link to="/aboutUs" className="hover:text-blue-600" onClick={() => setMenuOpen(false)}>About Us</Link>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>
+              <button className="bg-cyan-600 text-white text-sm font-semibold px-4 py-2 rounded hover:bg-cyan-800">
+                Contact Us
+              </button>
+            </Link>
+            <div className="flex gap-4 mt-2">
+              <FontAwesomeIcon icon={faFacebook} className="text-gray-600 text-xl hover:text-blue-800 cursor-pointer" />
+              <FontAwesomeIcon icon={faInstagram} className="text-gray-600 text-xl hover:text-pink-600 cursor-pointer" />
+              <FontAwesomeIcon icon={faLinkedin} className="text-gray-600 text-xl hover:text-blue-700 cursor-pointer" />
+              <FontAwesomeIcon icon={faXTwitter} className="text-gray-600 text-xl hover:text-gray-800 cursor-pointer" />
+            </div>
           </div>
         </div>
       )}
