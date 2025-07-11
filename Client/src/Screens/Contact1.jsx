@@ -6,7 +6,9 @@ import picture1 from "../assets/Photo-1.jpg";
 import phone from "../assets/phone.png";
 import message from "../assets/message.png";
 import location from "../assets/location.png";
-import Banner  from '../Components/Banner';
+import Banner from '../Components/Banner';
+import { toast } from 'react-toastify';
+
 
 export const Contact1 = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +18,7 @@ export const Contact1 = () => {
     subject: "",
     message: ""
   });
-  
+
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -25,16 +27,36 @@ export const Contact1 = () => {
     }));
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
-    setFormData({
-      name: "",
-      email: "",
-      phoneNumber: "",
-      subject: "",
-      message: ""
+
+    const response = await fetch("http://localhost:3000/api/form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+
     });
+
+    const result = await response.json();
+    console.log(result);
+
+    if (result.success) {
+      toast.success("Form Submitted Succeefully!!");
+      setFormData({
+        name: "",
+        email: "",
+        phoneNumber: "",
+        subject: "",
+        message: ""
+      })
+    }
+    else {
+      toast.error("Failed to submit form");
+    }
+
   };
 
   return (
