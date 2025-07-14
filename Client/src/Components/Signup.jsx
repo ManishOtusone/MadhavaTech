@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Signup = () => {
         e.preventDefault();
 
         try {
-            const res = await fetch("http://localhost:3000/api/signUp", {
+            const res = await fetch(`${API_BASE_URL}/api/signUp`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form),

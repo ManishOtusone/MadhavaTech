@@ -9,6 +9,8 @@ import location from "../assets/location.png";
 import Banner from '../Components/Banner';
 import { toast } from 'react-toastify';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 
 export const Contact1 = () => {
   const [formData, setFormData] = useState({
@@ -31,7 +33,7 @@ export const Contact1 = () => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
 
-    const response = await fetch("http://localhost:3000/api/form", {
+    const response = await fetch(`${API_BASE_URL}/api/form`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

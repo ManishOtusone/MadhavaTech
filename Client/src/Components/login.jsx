@@ -3,6 +3,10 @@ import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "../Components/Auth";
 
+
+
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 const Login = () => {
     const navigate = useNavigate();
     const { setIsLoggedIn } = useAuth();
@@ -20,7 +24,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const res = await fetch("http://localhost:3000/api/logIn", {
+            const res = await fetch(`${API_BASE_URL}/api/logIn`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Navbar } from "../Components/Navbar";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const AdminDashboard = () => {
     const [queries, setQueries] = useState([]);
@@ -8,7 +9,7 @@ const AdminDashboard = () => {
 
     const fetchQueries = async () => {
         try {
-            const res = await fetch("http://localhost:3000/api/admin/queries", {
+            const res = await fetch(`${API_BASE_URL}/api/admin/queries`, {
                 credentials: "include",
             });
             const data = await res.json();
@@ -26,8 +27,7 @@ const AdminDashboard = () => {
 
     const handleStatusChange = async (id, status) => {
         try {
-            const res = await fetch(
-                `http://localhost:3000/api/admin/queries/${id}/status`,
+            const res = await fetch(`${API_BASE_URL}/api/admin/queries/${id}/status`,
                 {
                     method: "PUT",
                     headers: {
@@ -96,10 +96,10 @@ const AdminDashboard = () => {
                                         <td className="px-4 py-3">
                                             <span
                                                 className={`px-3 py-1 rounded-full text-xs font-medium ${query.status === "pending"
-                                                        ? "bg-yellow-100 text-yellow-700"
-                                                        : query.status === "in-progress"
-                                                            ? "bg-blue-100 text-blue-700"
-                                                            : "bg-green-100 text-green-700"
+                                                    ? "bg-yellow-100 text-yellow-700"
+                                                    : query.status === "in-progress"
+                                                        ? "bg-blue-100 text-blue-700"
+                                                        : "bg-green-100 text-green-700"
                                                     }`}
                                             >
                                                 {query.status}
