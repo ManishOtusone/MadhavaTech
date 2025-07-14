@@ -10,11 +10,12 @@ router.post("/signUp", userCtrl.signUp);
 router.post("/logIn", userCtrl.logIn);
 router.post("/logout", userCtrl.logOut);
 
-router.post("/form", queryCtrl.createQuery);
+router.post("/form", authCtrl.auth, queryCtrl.createQuery);
 router.get("/admin/queries", authCtrl.auth, authCtrl.isAdmin, queryCtrl.getAllQueries);
 router.put("/admin/queries/:id/status", authCtrl.auth, authCtrl.isAdmin, queryCtrl.updateQueryStatus);
 
 
+router.get("/user/queries", authCtrl.auth, queryCtrl.getUserQueries);
 
 
 

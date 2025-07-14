@@ -12,6 +12,7 @@ import Login from './Components/login';
 import Signup from './Components/Signup';
 import AdminDashboard from './Screens/Dashboard';
 import PrivateRoute from './Components/privateRoute';
+import UserDashboard from './Screens/userDashboard';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/aboutUs' element={<AboutUs />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/user-dashboard' element={<UserDashboard />} />
 
           {/* Protected Admin Route */}
           <Route

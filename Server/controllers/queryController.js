@@ -11,6 +11,7 @@ exports.createQuery = async (req, res) => {
             phoneNumber,
             subject,
             message,
+            userId: req.user.id
         });
 
         res.status(200).json({
@@ -22,6 +23,7 @@ exports.createQuery = async (req, res) => {
         res.status(500).json({ success: false, message: "Server Error", error });
     }
 };
+
 
 // Admin: Get all queries
 exports.getAllQueries = async (req, res) => {
@@ -39,6 +41,24 @@ exports.getAllQueries = async (req, res) => {
         });
     }
 };
+
+//get UserQuery
+exports.getUserQueries = async (req, res) => {
+    try {
+        const queries = await Query.find({ userId: req.user.id }).sort({ createdAt: -1 });
+
+        res.status(200).json({
+            success: true,
+            data: queries,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Failed to fetch your queries",
+        });
+    }
+};
+
 
 // Admin: Update status
 exports.updateQueryStatus = async (req, res) => {

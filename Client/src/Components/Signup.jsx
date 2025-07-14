@@ -21,7 +21,7 @@ const Signup = () => {
 
     const handleSignup = async (e) => {
         e.preventDefault();
-
+        console.log("Submitting form:", form);
         try {
             const res = await fetch(`${API_BASE_URL}/api/signUp`, {
                 method: "POST",

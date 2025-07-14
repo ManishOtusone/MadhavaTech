@@ -39,6 +39,8 @@ export const Contact1 = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
+      credentials: "include"
+
 
     });
 

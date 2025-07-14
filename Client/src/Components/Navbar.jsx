@@ -12,19 +12,14 @@ const API_BASE_URL = import.meta.env.VITE_API_URL;
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { isLoggedIn, setIsLoggedIn, user, setUser } = useAuth();
-
   const navigate = useNavigate();
 
-  // 🔐 Logout Function
   const handleLogout = async () => {
     try {
       await fetch(`${API_BASE_URL}/api/logout`, {
         method: "POST",
         credentials: "include",
       });
-
-     
-
 
       setIsLoggedIn(false);
       setUser(null);
@@ -46,14 +41,14 @@ export const Navbar = () => {
           <img src={logo} alt="Logo" className="w-16 h-16 object-contain" />
         </div>
 
-        {/* Hamburger (Mobile Only) */}
+        {/* Hamburger (Mobile) */}
         <div className="sm:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
             <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} className="text-2xl text-gray-700" />
           </button>
         </div>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <div className="hidden sm:flex items-center gap-6 font-medium text-gray-700">
           <Link to="/" className="hover:text-blue-600">Home</Link>
           <Link to="/service" className="hover:text-blue-600">Service</Link>
@@ -65,7 +60,7 @@ export const Navbar = () => {
             </button>
           </Link>
 
-          {/* ✅ Admin: View Queries (Desktop) */}
+          {/* Admin Dashboard Link */}
           {isLoggedIn && user?.accountType === "Admin" && (
             <Link to="/admin-dashboard">
               <button className="bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded hover:bg-indigo-800">
@@ -74,7 +69,14 @@ export const Navbar = () => {
             </Link>
           )}
 
-
+          {/* User Dashboard Link */}
+          {isLoggedIn && user?.accountType === "User" && (
+            <Link to="/user-dashboard">
+              <button className="bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded hover:bg-green-800">
+                See You Query
+              </button>
+            </Link>
+          )}
 
           {/* Login / Logout */}
           {isLoggedIn ? (
@@ -102,7 +104,7 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Navigation */}
       {menuOpen && (
         <div className="sm:hidden px-6 pb-4 font-medium text-gray-700 overflow-hidden">
           <div className="flex flex-col items-center gap-4">
@@ -116,17 +118,25 @@ export const Navbar = () => {
               </button>
             </Link>
 
-            {/* ✅ Admin: View Queries (Mobile) */}
+            {/* Admin Link (Mobile) */}
             {isLoggedIn && user?.accountType === "Admin" && (
-              <Link to="/admin-dashboard">
+              <Link to="/admin-dashboard" onClick={() => setMenuOpen(false)}>
                 <button className="bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded hover:bg-indigo-800">
                   View Queries
                 </button>
               </Link>
             )}
 
+            {/* User Link (Mobile) */}
+            {isLoggedIn && user?.accountType === "User" && (
+              <Link to="/user-dashboard" onClick={() => setMenuOpen(false)}>
+                <button className="bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded hover:bg-green-800">
+                  User Panel
+                </button>
+              </Link>
+            )}
 
-            {/* Login / Logout */}
+            {/* Login / Logout (Mobile) */}
             {isLoggedIn ? (
               <button
                 onClick={handleLogout}

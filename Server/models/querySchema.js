@@ -7,6 +7,7 @@ const querySchema = new mongoose.Schema({
     subject: { type: String, required: true },
     message: { type: String, required: true, },
     status: { type: String, enum: ["pending", "in-progress", "resolved"], default: "pending", },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
 
 }, {
     timestamps: true,
