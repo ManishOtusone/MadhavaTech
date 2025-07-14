@@ -11,7 +11,7 @@ import { AboutUs } from './Screens/AboutUs';
 import Login from './Components/login';
 import Signup from './Components/Signup';
 import AdminDashboard from './Screens/Dashboard';
-import PrivateRoute from './Components/PrivateRoute'; // 👈 Import this
+import PrivateRoute from './Components/privateRoute';
 
 function App() {
   return (
