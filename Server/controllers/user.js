@@ -107,14 +107,21 @@ exports.logIn = async (req, res) => {
 
             const options = {
                 expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
-                httpOnly: true
+                httpOnly: true,
+                secure: true,
+                sameSite: "None"
             };
 
-            return res.cookie("token", token, options).status(200).json({
-                success: true,
-                message: "Logged In Successfully",
-                existingUser
-            });
+
+            return res
+                .cookie("token", token, options)
+                .status(200)
+                .json({
+                    success: true,
+                    message: "Logged In Successfully",
+                    existingUser
+                });
+
         }
 
         else {
@@ -140,7 +147,7 @@ exports.logIn = async (req, res) => {
 exports.logOut = (req, res) => {
     res.clearCookie("token", {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production", 
+        secure: process.env.NODE_ENV === "production",
         sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/",
     });

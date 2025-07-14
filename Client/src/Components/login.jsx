@@ -35,7 +35,7 @@ const Login = () => {
             if (res.ok) {
                 toast.success("Logged in successfully!");
                 setIsLoggedIn(true);
-                setUser(data.existingUser); // ✅ Store user
+                setUser(data.existingUser); 
 
                 if (data.existingUser?.accountType === "Admin") {
                     navigate("/admin-dashboard");
