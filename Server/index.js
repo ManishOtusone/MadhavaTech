@@ -13,8 +13,8 @@ const PORT = process.env.PORT || 5000;
 dbConnection();
 
 app.use(cors({
-    origin: "http://localhost:5173", 
-    credentials: true               
+    origin: ["*", "http://localhost:5173", "https://madhava-tech-frontend.vercel.app"],
+    credentials: true
 }));
 
 //middleware
@@ -23,6 +23,10 @@ app.use(cookieParser());
 
 //api
 app.use("/api", routes);
+app.use("", (req, res) => {
+    return res.send("welcome to madvas");
+
+});
 
 
 app.listen(PORT, () => {
