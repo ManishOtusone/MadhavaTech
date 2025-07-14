@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Navbar } from "./Navbar";
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const Signup = () => {
@@ -43,6 +44,7 @@ const Signup = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+            <Navbar />
             <div className="max-w-md w-full bg-white p-8 rounded shadow-md">
                 <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
                 <form onSubmit={handleSignup} className="space-y-4">

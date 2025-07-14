@@ -7,31 +7,34 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from '../Components/Auth';
 import { toast } from 'react-toastify';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { isLoggedIn, setIsLoggedIn, user, setUser } = useAuth();
+
   const navigate = useNavigate();
 
   // 🔐 Logout Function
-  const handleLogout = () => {
-    // Clear all cookies
-    document.cookie.split(";").forEach((c) => {
-      document.cookie = c
-        .replace(/^ +/, "")
-        .replace(/=.*/, "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/");
-    });
+  const handleLogout = async () => {
+    try {
+      await fetch(`${API_BASE_URL}/api/logout`, {
+        method: "POST",
+        credentials: "include",
+      });
 
-    // Update auth state
-    setIsLoggedIn(false);
+     
 
-    // Toast
-    toast.success("Logged out successfully!");
 
-    // Redirect to home
-    navigate("/");
-
-    // Close mobile menu
-    setMenuOpen(false);
+      setIsLoggedIn(false);
+      setUser(null);
+      toast.success("Logged out successfully!");
+      navigate("/");
+      setMenuOpen(false);
+    } catch (err) {
+      console.log(err);
+      toast.error("Logout failed");
+    }
   };
 
   return (
@@ -62,6 +65,18 @@ export const Navbar = () => {
             </button>
           </Link>
 
+          {/* ✅ Admin: View Queries (Desktop) */}
+          {isLoggedIn && user?.accountType === "Admin" && (
+            <Link to="/admin-dashboard">
+              <button className="bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded hover:bg-indigo-800">
+                View Queries
+              </button>
+            </Link>
+          )}
+
+
+
+          {/* Login / Logout */}
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
@@ -77,6 +92,7 @@ export const Navbar = () => {
             </Link>
           )}
 
+          {/* Social Icons */}
           <div className="flex gap-3 ml-2">
             <FontAwesomeIcon icon={faFacebook} className="text-gray-600 text-lg hover:text-blue-800 cursor-pointer" />
             <FontAwesomeIcon icon={faInstagram} className="text-gray-600 text-lg hover:text-pink-600 cursor-pointer" />
@@ -100,6 +116,17 @@ export const Navbar = () => {
               </button>
             </Link>
 
+            {/* ✅ Admin: View Queries (Mobile) */}
+            {isLoggedIn && user?.accountType === "Admin" && (
+              <Link to="/admin-dashboard">
+                <button className="bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded hover:bg-indigo-800">
+                  View Queries
+                </button>
+              </Link>
+            )}
+
+
+            {/* Login / Logout */}
             {isLoggedIn ? (
               <button
                 onClick={handleLogout}
@@ -115,6 +142,7 @@ export const Navbar = () => {
               </Link>
             )}
 
+            {/* Social Icons */}
             <div className="flex gap-4 mt-2">
               <FontAwesomeIcon icon={faFacebook} className="text-gray-600 text-xl hover:text-blue-800 cursor-pointer" />
               <FontAwesomeIcon icon={faInstagram} className="text-gray-600 text-xl hover:text-pink-600 cursor-pointer" />

@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "../Components/Auth";
-
-
+import { Navbar } from "./Navbar";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const Login = () => {
     const navigate = useNavigate();
-    const { setIsLoggedIn } = useAuth();
+    const { setIsLoggedIn, setUser } = useAuth(); // ✅ Fix: included setUser
 
     const [form, setForm] = useState({
         email: "",
@@ -36,11 +35,13 @@ const Login = () => {
             if (res.ok) {
                 toast.success("Logged in successfully!");
                 setIsLoggedIn(true);
+                setUser(data.existingUser); // ✅ Store user
 
-                // Optional: Redirect based on role
-                form.accountType === "Admin"
-                    ? navigate("/admin")
-                    : navigate("/dashboard");
+                if (data.existingUser?.accountType === "Admin") {
+                    navigate("/admin-dashboard");
+                } else {
+                    navigate("/");
+                }
             } else {
                 toast.error(data.message || "Login failed");
             }
@@ -51,7 +52,8 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-            <div className="max-w-md w-full bg-white p-8 rounded shadow-md">
+            <Navbar />
+            <div className="max-w-md w-full bg-white p-8 rounded shadow-md mt-20">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Login</h2>
                 <form onSubmit={handleLogin} className="space-y-4">
                     <select
